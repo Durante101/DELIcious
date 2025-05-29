@@ -13,6 +13,16 @@ public class Sandwich implements FoodItem {
         this.bread = bread;
     }
 
+    public String getSize() {
+
+        return switch (this.size) {
+            case SMALL -> "4in";
+            case MEDIUM -> "8in";
+            case LARGE -> "12in";
+            default -> "";
+        };
+
+    }
 
     public void setSize(Size size) {
         this.size = size;
@@ -45,5 +55,13 @@ public class Sandwich implements FoodItem {
         return sandwichTotalPrice;
     }
 
+    private double getSandwichSizeCost(){
+        return switch (this.size) {
+            case SMALL -> 5.50;
+            case MEDIUM -> 7;
+            case LARGE -> 8.50;
+        };
 
+
+    }
 }
