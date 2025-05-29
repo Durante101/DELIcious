@@ -46,7 +46,48 @@ public class Userinerface {
 
     }
 
-   
+    private static void orderScreen() {
+
+        boolean running = true;
+        while (running) {
+            System.out.println("What food items would you like to add to your order");
+            System.out.println("""
+                1) Add Sandwich
+                ------------------
+                2) Add Drink
+                ------------------
+                3) Add Chips
+                ------------------
+                4) Checkout
+                ------------------
+                5) Cancel Order
+                
+                """);
+
+            String selection = scanner.nextLine();
+
+            switch (selection) {
+
+                case "1":
+                    addSandwichToOrder();
+                    running = false;
+                case "2":
+                    running = false;
+                case "3":
+                    running = false;
+                case "4":
+                    running = false;
+                case "5":
+                    running = false;
+                default:
+                    System.out.println("Try again");
+
+
+            }
+            return null;
+        }
+
+    }
 
     private static boolean displayHomeScreen() {
         boolean exit = true;
