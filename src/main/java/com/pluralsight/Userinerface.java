@@ -37,7 +37,33 @@ public class Userinerface {
 
 
 
+    private static Sandwich addSandwichToOrder() {
 
+        //create a default object and use setters to populate it
+        Sandwich newSandwich = new Sandwich();
+        String selection;
+
+        //while loop starts
+        System.out.println("Select you bread:");
+        System.out.println("""
+                1) White
+                2) Wheat
+                3) Wrap
+                4) Rye
+                """);
+        selection = scanner.nextLine();
+        switch (selection) {
+            case "1":
+                newSandwich.setBread("White");
+                break;
+            case "2":
+                newSandwich.setBread("Wheat");
+                break;
+            default:
+                System.out.println("try again");
+                break;
+
+        }
         //first while loops ends
 
         // asking bread size
@@ -46,7 +72,7 @@ public class Userinerface {
                 S) Small - 4in 5.50
                 M) Medium - 8in 7.00
                 L) Large - 12 8.50
-
+                
                 """);
         selection = scanner.nextLine();
 
