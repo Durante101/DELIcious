@@ -40,7 +40,35 @@ public class Userinerface {
 
         //first while loops ends
 
+        // asking bread size
+        System.out.println("Enter sandwich size");
+        System.out.println("""
+                S) Small - 4in 5.50
+                M) Medium - 8in 7.00
+                L) Large - 12 8.50
 
+                """);
+        selection = scanner.nextLine();
+
+        switch (selection.toUpperCase()) {
+            case "S":
+                newSandwich.setSize(Size.SMALL);
+                break;
+            case "M":
+                newSandwich.setSize(Size.MEDIUM);
+                break;
+            case "L":
+                newSandwich.setSize(Size.LARGE);
+                break;
+            default:
+                System.out.println("Try Again");
+
+        }
+
+        // continue to build sandwich
+
+
+        return newSandwich;
 
     }
 
