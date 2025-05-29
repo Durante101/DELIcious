@@ -11,8 +11,8 @@ public class Userinerface {
 
         //  System.out.println(addDrinkToOrder());
 
-        //lets pretend this is my order view
-
+        // main menu
+        displayHomeScreen();
         //order sandwich
         Sandwich sandwich = addSandwichToOrder();
 
@@ -39,31 +39,37 @@ public class Userinerface {
 
     }
 
-    private static Chips displayHomeScreen()() {
+    private static void displayHomeScreen() {
 
-        System.out.println("Select a chip");
-        System.out.println("""
+        boolean running = true;
+        while (running) {
+
+            System.out.println("Select a chip");
+            System.out.println("""
                 1) New Order
                 2) Exit
                 
                 """);
 
-        String selection = scanner.nextLine();
-        Chips chips;
-
-        switch (selection) {
+            String selection = scanner.nextLine();
 
 
-            case "1":
-                return new Chips("Lays");
-            case "2":
-                return new Chips("Doritos");
-            default:
-                System.out.println("Try again");
+            switch (selection) {
 
+                case "1":
+                    running = false;
+                    break;
+                case "2":
+                    break;
+                default:
+                    System.out.println("Try again");
+
+
+            }
 
         }
-        return null;
+
+
     }
 
     private static Chips addChipsToOrder() {
