@@ -12,41 +12,51 @@ public class Userinerface {
         //  System.out.println(addDrinkToOrder());
 
         // main menu
-        displayHomeScreen();
-        //order sandwich
-        Sandwich sandwich = addSandwichToOrder();
+        if (!displayHomeScreen()) {
+            System.out.println("Exiting DELIcious Application 良い一日をお過ごしください");
+            return;
+        } else {
+            //  Order screen
+            orderScreen();
+            //order sandwich
+            Sandwich sandwich = addSandwichToOrder();
 
-        //order a drink
-        Drink drink = addDrinkToOrder();
+            //order a drink
+            Drink drink = addDrinkToOrder();
 
-        //order chips
+            //order chips
 
-        Chips chips = addChipsToOrder();
+            Chips chips = addChipsToOrder();
 
 
-        //Checkout
-        System.out.println("Checkout? ");
-        System.out.println("Y/N");
+            //Checkout
+            System.out.println("Checkout? ");
+            System.out.println("Y/N");
 
-        Order newOrder = new Order();
-        newOrder.addItemToOrder(sandwich);
-        newOrder.addItemToOrder(drink);
-        newOrder.addItemToOrder(chips);
+            Order newOrder = new Order();
+            newOrder.addItemToOrder(sandwich);
+            newOrder.addItemToOrder(drink);
+            newOrder.addItemToOrder(chips);
 
-        System.out.println("Order Total");
-        System.out.println(newOrder.getOrderTotal());
+            System.out.println("Order Total");
+            System.out.println(newOrder.getOrderTotal());
+        }
+
 
 
     }
 
-    private static void displayHomeScreen() {
+   
 
+    private static boolean displayHomeScreen() {
+        boolean exit = true;
         boolean running = true;
         while (running) {
 
-            System.out.println("Select a chip");
+            System.out.println("Would you like to make a new order with DELIcious?");
             System.out.println("""
                 1) New Order
+                ------------------
                 2) Exit
                 
                 """);
@@ -60,16 +70,18 @@ public class Userinerface {
                     running = false;
                     break;
                 case "2":
+                    running = false;
+                    exit = false;
                     break;
                 default:
-                    System.out.println("Try again");
+                    System.out.println("Try again\n");
 
 
             }
 
         }
 
-
+        return exit;
     }
 
     private static Chips addChipsToOrder() {

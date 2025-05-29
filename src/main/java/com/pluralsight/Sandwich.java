@@ -41,7 +41,7 @@ public class Sandwich implements FoodItem {
 
         double sandwichTotalPrice = 0;
 
-        //check the size of the sandwich and add it to toal Cost
+        //check the size of the sandwich and add it to total Cost
         sandwichTotalPrice += getSandwichSizeCost();
 
 
