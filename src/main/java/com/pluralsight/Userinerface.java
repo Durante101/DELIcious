@@ -35,7 +35,32 @@ public class Userinerface {
         return null;
     }
 
+    private static Chips addChipsToOrder() {
 
+        System.out.println("Select a chip");
+        System.out.println("""
+                1) Lays
+                2) Doritos
+                
+                """);
+
+        String selection = scanner.nextLine();
+        Chips chips;
+
+        switch (selection) {
+
+
+            case "1":
+                return new Chips("Lays");
+            case "2":
+                return new Chips("Doritos");
+            default:
+                System.out.println("Try again");
+
+
+        }
+        return null;
+    }
 
     private static Sandwich addSandwichToOrder() {
 
