@@ -45,7 +45,48 @@ public class Userinerface {
     }
 
 
+    private static Drink addDrinkToOrder() {
+        String flavor = "";
+        Size size = Size.SMALL;
 
+        boolean isSelectingSize = true;
+
+        String selection;
+        while (isSelectingSize) {
+
+            System.out.println("Drink Menu");
+            System.out.println("Select size");
+            System.out.println("""
+                    S) Small
+                    M) Medium
+                    L) Large
+                    
+                    """);
+            selection = scanner.nextLine();
+
+            switch (selection.toUpperCase()) {
+
+                case "S":
+                    //size = Size.SMALL;
+                    isSelectingSize = false;
+                    break;
+                case "M":
+                    size = Size.MEDIUM;
+                    isSelectingSize = false;
+                    break;
+                case "L":
+                    size = Size.LARGE;
+                    isSelectingSize = false;
+                    break;
+
+                default:
+                    //we can just default to small;
+                    //    size = Size.SMALL;
+                    System.out.println("Error: Please try again..");
+                    break;
+
+            }
+        }
 
         //the while loop for the next question in this menu would start
         boolean isSelectingFlavor = true;
