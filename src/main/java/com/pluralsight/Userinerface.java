@@ -6,7 +6,38 @@ public class Userinerface {
     public static Scanner scanner = new Scanner(System.in);
 
 
+    public void allMethods() {
 
+
+        //  System.out.println(addDrinkToOrder());
+
+        //lets pretend this is my order view
+
+        //order sandwich
+        Sandwich sandwich = addSandwichToOrder();
+
+        //order a drink
+        Drink drink = addDrinkToOrder();
+
+        //order chips
+
+        Chips chips = addChipsToOrder();
+
+
+        //Checkout
+        System.out.println("Checkout? ");
+        System.out.println("Y/N");
+
+        Order newOrder = new Order();
+        newOrder.addItemToOrder(sandwich);
+        newOrder.addItemToOrder(drink);
+        newOrder.addItemToOrder(chips);
+
+        System.out.println("Order Total");
+        System.out.println(newOrder.getOrderTotal());
+
+
+    }
 
     private static Chips displayHomeScreen()() {
 
