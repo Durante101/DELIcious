@@ -58,7 +58,7 @@ public class Sandwich implements FoodItem {
     private double getSandwichSizeCost(){
         return switch (this.size) {
             case SMALL -> 5.50;
-            case MEDIUM -> 7;
+            case MEDIUM -> 7.00;
             case LARGE -> 8.50;
         };
 

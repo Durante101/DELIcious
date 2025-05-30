@@ -7,7 +7,8 @@ public class DELIcious {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Userinerface userinerface = new Userinerface();
-            userinerface.allMethods();
+        UserInterface userinerface = new UserInterface();
+            userinerface.display();
     }
 }
+

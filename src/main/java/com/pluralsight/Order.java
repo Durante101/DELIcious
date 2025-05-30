@@ -26,7 +26,7 @@ public class Order {
         double total = 0;
 
         for(FoodItem item: items){
-            System.out.println(item.getPrice());
+            System.out.println(item);
             total += item.getPrice();
         }
 

@@ -4,6 +4,9 @@ public class Drink implements FoodItem {
     private String flavor;
     private Size size;
 
+    public Drink() {
+
+    }
     public Drink(String flavor, Size size) {
         this.flavor = flavor;
         this.size = size;
@@ -39,9 +42,9 @@ public class Drink implements FoodItem {
     public double getPrice() {
 
         return switch (this.size) {
-            case SMALL -> 2;
+            case SMALL -> 2.00;
             case MEDIUM -> 2.50;
-            case LARGE -> 3;
+            case LARGE -> 3.00;
         };
     }
 
