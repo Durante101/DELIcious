@@ -11,7 +11,7 @@ public class Sandwich implements FoodItem {
     boolean toasted;
     boolean extraCheese;
     boolean extraMeat;
-    List<Toppings> toppings;
+
 
 
     public String getBread() {

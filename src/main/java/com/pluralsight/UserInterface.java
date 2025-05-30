@@ -131,7 +131,7 @@ public class UserInterface {
                     break;
                 default:
                     System.out.println("Try again");
-        }
+            }
 
 
 
@@ -227,7 +227,7 @@ public class UserInterface {
             }
         }
 
-        
+
 
 
         // continue to build sandwich
