@@ -1,8 +1,17 @@
-package com.pluralsight;
+package com.pluralsight.Sandwich;
+
+import com.pluralsight.FoodItem;
+import com.pluralsight.Size;
+
+import java.util.List;
 
 public class Sandwich implements FoodItem {
     String bread;
     Size size;
+    boolean toasted;
+    boolean extraCheese;
+    boolean extraMeat;
+    List<Toppings> toppings;
 
 
     public String getBread() {

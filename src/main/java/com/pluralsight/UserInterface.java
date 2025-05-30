@@ -1,4 +1,6 @@
 package com.pluralsight;
+import com.pluralsight.Sandwich.Sandwich;
+
 import java.util.Scanner;
 
 
@@ -204,36 +206,28 @@ public class UserInterface {
             }
         }
 
-
         running = true;
         while (running) {
-            System.out.println("Enter sandwich size");
-            System.out.println("""
-                    S) Small - 4in 5.50
-                    M) Medium - 8in 7.00
-                    L) Large - 12in 8.50
-                    
-                    """);
-            selection = scanner.nextLine();
-
-            switch (selection.toUpperCase()) {
-                case "S":
+            System.out.println("Select sandwich size:\nS) Small (4\")\nM) Medium (8\")\nL) Large (12\")");
+            selection = scanner.nextLine().toUpperCase();
+            switch (selection) {
+                case "S" -> {
                     newSandwich.setSize(Size.SMALL);
                     running = false;
-                    break;
-                case "M":
+                }
+                case "M" -> {
                     newSandwich.setSize(Size.MEDIUM);
                     running = false;
-                    break;
-                case "L":
+                }
+                case "L" -> {
                     newSandwich.setSize(Size.LARGE);
                     running = false;
-                    break;
-                default:
-                    System.out.println("Try Again");
-
+                }
+                default -> System.out.println("Try again.");
             }
         }
+
+        
 
 
         // continue to build sandwich
