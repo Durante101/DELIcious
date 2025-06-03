@@ -1,9 +1,11 @@
-# Project Title
+# DELIcious
+
+
 
 ## Description of the Project
 lets you build your own sandwich order with drinks and chips. You can keep adding stuff, change your mind, or check out whenever you're ready.
 
-![Class Diagram](path/to/your/class_diagram.png)
+
 
 ## User Stories
 
