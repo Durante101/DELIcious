@@ -30,7 +30,7 @@ public class Order {
             total += item.getPrice();
         }
 
-      return total;
+        return total;
     }
 
     @Override

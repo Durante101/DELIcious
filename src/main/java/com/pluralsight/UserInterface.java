@@ -1,4 +1,5 @@
 package com.pluralsight;
+import com.pluralsight.Sandwich.Meat;
 import com.pluralsight.Sandwich.Sandwich;
 
 import java.util.Scanner;
@@ -12,8 +13,8 @@ public class UserInterface {
         boolean running = true;
 
         while (displayHomeScreen()) {
-            currentOrder = new Order();  // 🍟 Start ONE order
-            orderScreen();                // 🧅 Keep adding/editing until ready to check out
+            currentOrder = new Order();
+            orderScreen();
         }
 
     }
@@ -158,11 +159,11 @@ public class UserInterface {
 
                 case "1":
                     brand = "Lays";
-                    running = false; // ✅ Good
+                    running = false;
                     break;
                 case "2":
                     brand = "Doritos";
-                    running = false; // ✅ Good
+                    running = false;
                     break;
                 default:
                     System.out.println("Try again");
@@ -206,34 +207,7 @@ public class UserInterface {
             }
         }
 
-        running = true;
-        while (running) {
-            System.out.println("Select sandwich size:\nS) Small (4\")\nM) Medium (8\")\nL) Large (12\")");
-            selection = scanner.nextLine().toUpperCase();
-            switch (selection) {
-                case "S" -> {
-                    newSandwich.setSize(Size.SMALL);
-                    running = false;
-                }
-                case "M" -> {
-                    newSandwich.setSize(Size.MEDIUM);
-                    running = false;
-                }
-                case "L" -> {
-                    newSandwich.setSize(Size.LARGE);
-                    running = false;
-                }
-                default -> System.out.println("Try again.");
-            }
-        }
 
-
-
-
-        // continue to build sandwich
-
-
-        currentOrder.addItemToOrder(newSandwich);
     }
 
 
@@ -242,54 +216,46 @@ public class UserInterface {
         Size size = null;
 
         boolean isSelectingSize = true;
-
         String selection;
-        while (isSelectingSize) {
 
+        while (isSelectingSize) {
             System.out.println("Drink Menu");
             System.out.println("Select size");
             System.out.println("""
-                    S) Small
-                    M) Medium
-                    L) Large
-                    """);
+            1) Small
+            2) Medium
+            3) Large
+            """);
             selection = scanner.nextLine();
 
-            switch (selection.toUpperCase()) {
-
-                case "S":
+            switch (selection) {
+                case "1":
                     size = Size.SMALL;
                     isSelectingSize = false;
                     break;
-                case "M":
+                case "2":
                     size = Size.MEDIUM;
                     isSelectingSize = false;
                     break;
-                case "L":
+                case "3":
                     size = Size.LARGE;
                     isSelectingSize = false;
                     break;
-
                 default:
-                    //we can just default to small;
-                    //    size = Size.SMALL;
-                    System.out.println("Error: Please try again..");
+                    System.out.println("Error: Please try again.");
                     break;
-
             }
         }
 
-        //the while loop for the next question in this menu would start
         boolean isSelectingFlavor = true;
 
         while (isSelectingFlavor) {
-
             System.out.println("What flavor drink?");
             System.out.println("""
-                    1) Coke
-                    2) Sprite
-                    3) Apple Juice
-                    """);
+            1) Coke
+            2) Sprite
+            3) Apple Juice
+            """);
 
             selection = scanner.nextLine();
             switch (selection) {
@@ -307,12 +273,14 @@ public class UserInterface {
                     break;
                 default:
                     System.out.println("Error: Please try again");
-
+                    break;
             }
         }
+
 
         Drink newDrink = new Drink(flavor, size);
         currentOrder.addItemToOrder(newDrink);
     }
+
 
 }

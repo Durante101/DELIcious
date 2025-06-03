@@ -54,11 +54,6 @@ public class Sandwich implements FoodItem {
         sandwichTotalPrice += getSandwichSizeCost();
 
 
-        // check if there's meat on the sandwich / extra meat
-
-
-
-        //check if there's cheese / extra cheese
 
 
         return sandwichTotalPrice;
